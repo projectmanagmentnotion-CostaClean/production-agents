@@ -6,7 +6,7 @@ tools: ["read", "search", "edit", "github/*"]
 disable-model-invocation: true
 user-invocable: true
 metadata:
-  version: "0.1.0"
+  version: "1.0.0"
   risk-level: "R1"
 ---
 
