@@ -16,8 +16,8 @@ Convertir este repositorio en una biblioteca profesional, versionada y reutiliza
 - [x] Crear `AGENTS.md`.
 - [x] Definir niveles de riesgo R0–R4.
 - [x] Establecer separación entre implementación y auditoría.
-- [ ] Crear `docs/SECURITY_MODEL.md`.
-- [ ] Crear `docs/PERMISSION_MATRIX.md`.
+- [x] Crear `docs/SECURITY_MODEL.md`.
+- [x] Crear `docs/PERMISSION_MATRIX.md`.
 - [ ] Definir política de versionado y releases.
 
 **Cierre:** ningún agente nuevo se acepta sin responsabilidad, herramientas, prohibiciones, validaciones y salida definidas.
@@ -36,12 +36,15 @@ Convertir este repositorio en una biblioteca profesional, versionada y reutiliza
 
 ## Fase 2 — Núcleo universal
 
-**Estado:** En progreso
+**Estado:** Implementación completa; evaluación pendiente
 
 - [x] `project-continuation.agent.md`.
 - [x] `implementation-planner.agent.md`.
-- [ ] `senior-fullstack-builder.agent.md`.
-- [ ] `bug-root-cause-investigator.agent.md`.
+- [x] `senior-fullstack-builder.agent.md`.
+- [x] `bug-root-cause-investigator.agent.md`.
+- [ ] Crear escenarios de evaluación independientes para los cuatro perfiles.
+- [ ] Validar que aparecen y pueden seleccionarse desde GitHub Copilot Agents tras el merge.
+- [ ] Ejecutar piloto en un repositorio sin acceso a producción.
 
 **Cierre:** los cuatro agentes tienen responsabilidades no solapadas y escenarios de prueba aprobados.
 
@@ -103,10 +106,12 @@ Convertir este repositorio en una biblioteca profesional, versionada y reutiliza
 
 ## Próximo bloque recomendado
 
-1. Completar documentación de seguridad y permisos.
-2. Añadir validador automático de perfiles.
-3. Construir `senior-fullstack-builder` y `bug-root-cause-investigator`.
-4. Probar los cuatro agentes del núcleo en un repositorio piloto sin acceso a producción.
+1. Crear guía de autoría y catálogo de agentes.
+2. Añadir validador automático de frontmatter y Markdown.
+3. Crear escenarios de evaluación para el núcleo universal.
+4. Revisar y fusionar el PR de fundación.
+5. Probar los cuatro agentes en un repositorio piloto sin acceso a producción.
+6. Iniciar la Fase 3 con auditores independientes.
 
 ## Definición de terminado
 
