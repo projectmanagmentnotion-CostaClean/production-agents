@@ -47,12 +47,41 @@ Codex queda como herramienta opcional para trabajo local o ingeniería intensiva
 
 Los agentes con capacidad de edición o ejecución están configurados inicialmente para selección manual mediante `disable-model-invocation: true`.
 
-## Custom Agents disponibles
+## Núcleo universal disponible
 
-- `.github/agents/project-continuation.agent.md`
-- `.github/agents/implementation-planner.agent.md`
+- `.github/agents/project-continuation.agent.md`: reconstruye el estado real y continúa el siguiente bloque desbloqueado.
+- `.github/agents/implementation-planner.agent.md`: diseña un plan ejecutable sin modificar código.
+- `.github/agents/senior-fullstack-builder.agent.md`: implementa funcionalidades aprobadas de extremo a extremo.
+- `.github/agents/bug-root-cause-investigator.agent.md`: reproduce errores, confirma causa raíz y añade pruebas de regresión.
 
-Consulta `docs/ROADMAP.md` para el resto del núcleo y especialistas previstos.
+Consulta `docs/ROADMAP.md` para especialistas de QA, seguridad, Supabase, UX, GSAP, SEO, despliegue y agentes empresariales.
+
+## Qué agente seleccionar
+
+```text
+Necesito entender y planificar una funcionalidad
+→ implementation-planner
+
+Tengo un plan aprobado y quiero implementarlo
+→ senior-fullstack-builder
+
+Tengo un error concreto o una regresión
+→ bug-root-cause-investigator
+
+Quiero retomar un proyecto y continuar su roadmap
+→ project-continuation
+```
+
+## Seguridad y permisos
+
+Antes de utilizar o ampliar los agentes, lee:
+
+- `AGENTS.md`
+- `docs/SECURITY_MODEL.md`
+- `docs/PERMISSION_MATRIX.md`
+- `docs/ROADMAP.md`
+
+Los agentes del núcleo están limitados a lectura o a cambios locales reversibles en rama. Producción, migraciones remotas, secretos, pagos, facturación y acciones destructivas quedan fuera de alcance por defecto.
 
 ## Agentes históricos y portables
 
@@ -80,14 +109,7 @@ Estos archivos se conservarán y se convertirán progresivamente a perfiles `.ag
 - `playbooks/ridaos-web-audit.md`
 - `playbooks/generic-web-production-audit.md`
 
-## Gobierno
-
-Antes de crear o modificar agentes, lee:
-
-- `AGENTS.md`
-- `docs/ROADMAP.md`
-
-Reglas permanentes:
+## Reglas permanentes
 
 - No tocar producción sin gate explícito.
 - No tocar bases de datos productivas sin backup y autorización.
@@ -98,7 +120,8 @@ Reglas permanentes:
 - No commitear `.env`, cookies, dumps, `storageState`, tokens o carpetas privadas.
 - No declarar pruebas o auditorías como ejecutadas sin evidencia.
 - Todo cambio debe realizarse en rama y quedar revisable mediante pull request.
+- El agente que implementa no aprueba ni fusiona su propio trabajo.
 
 ## Estado
 
-La biblioteca está en fase de fundación `v0.1`. El objetivo es publicar una versión `v1.0.0` después de validar el núcleo universal en proyectos piloto reales.
+La biblioteca está en fase de fundación `v0.1`. El núcleo universal ya está implementado en el PR de fundación, pero todavía requiere validación, revisión, merge y prueba piloto antes de considerarse estable.
