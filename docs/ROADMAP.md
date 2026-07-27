@@ -2,124 +2,132 @@
 
 ## Visión
 
-Convertir este repositorio en una biblioteca profesional, versionada y reutilizable de GitHub Custom Agents, playbooks y plantillas para proyectos web, aplicaciones, Supabase, GSAP y automatizaciones empresariales.
+Mantener una biblioteca profesional, versionada y reutilizable de GitHub Custom Agents, playbooks y plantillas para proyectos web, aplicaciones, Supabase, GSAP y automatizaciones empresariales.
 
 ## Estado global
 
-`IN_PROGRESS — Foundation v0.1`
+`RELEASE_CANDIDATE — v1.0.0-rc.1`
+
+La implementación del repositorio está completa. La promoción a `v1.0.0` estable depende de CI verde, revisión independiente, merge y pilotos post-merge en proyectos reales.
 
 ## Fase 0 — Gobierno y seguridad
 
-**Estado:** En progreso
+**Estado:** Completa
 
-- [x] Definir propósito y límites del repositorio.
+- [x] Definir propósito y límites.
 - [x] Crear `AGENTS.md`.
-- [x] Definir niveles de riesgo R0–R4.
-- [x] Establecer separación entre implementación y auditoría.
+- [x] Definir niveles R0–R4.
+- [x] Separar implementación y auditoría.
 - [x] Crear `docs/SECURITY_MODEL.md`.
 - [x] Crear `docs/PERMISSION_MATRIX.md`.
-- [ ] Definir política de versionado y releases.
-
-**Cierre:** ningún agente nuevo se acepta sin responsabilidad, herramientas, prohibiciones, validaciones y salida definidas.
+- [x] Crear política de versionado y releases.
 
 ## Fase 1 — Estándar de autoría
 
-**Estado:** En progreso
+**Estado:** Completa
 
-- [x] Crear plantilla oficial `.agent.md`.
-- [ ] Crear guía de autoría.
-- [ ] Crear catálogo de agentes.
-- [ ] Crear escenarios mínimos de evaluación.
-- [ ] Añadir validación automática de frontmatter y Markdown.
-
-**Cierre:** todos los perfiles comparten estructura y pueden validarse de forma repetible.
+- [x] Plantilla oficial `.agent.md`.
+- [x] Guía de autoría.
+- [x] Catálogo de agentes.
+- [x] Escenarios mínimos de evaluación.
+- [x] Validador automático de frontmatter y contratos.
+- [x] Workflow de GitHub Actions.
 
 ## Fase 2 — Núcleo universal
 
-**Estado:** Implementación completa; evaluación pendiente
+**Estado:** Implementación completa; piloto post-merge pendiente
 
 - [x] `project-continuation.agent.md`.
 - [x] `implementation-planner.agent.md`.
 - [x] `senior-fullstack-builder.agent.md`.
 - [x] `bug-root-cause-investigator.agent.md`.
-- [ ] Crear escenarios de evaluación independientes para los cuatro perfiles.
-- [ ] Validar que aparecen y pueden seleccionarse desde GitHub Copilot Agents tras el merge.
-- [ ] Ejecutar piloto en un repositorio sin acceso a producción.
-
-**Cierre:** los cuatro agentes tienen responsabilidades no solapadas y escenarios de prueba aprobados.
+- [x] Escenarios contractuales documentados.
+- [ ] Confirmar aparición y selección desde GitHub Copilot Agents después del merge.
+- [ ] Ejecutar piloto en repositorio real sin producción.
 
 ## Fase 3 — Calidad independiente
 
-**Estado:** Pendiente
+**Estado:** Completa
 
-- [ ] `qa-e2e-specialist.agent.md`.
-- [ ] `pr-quality-gate.agent.md`.
-- [ ] `security-privacy-auditor.agent.md`.
-- [ ] `documentation-roadmap.agent.md`.
-- [ ] Normalizar veredictos P0–P3.
+- [x] `qa-e2e-specialist.agent.md`.
+- [x] `pr-quality-gate.agent.md`.
+- [x] `security-privacy-auditor.agent.md`.
+- [x] `documentation-roadmap.agent.md`.
+- [x] Veredictos normalizados y prioridades P0–P3.
 
 ## Fase 4 — Apps y Supabase
 
-**Estado:** Pendiente
+**Estado:** Implementación completa; piloto pendiente
 
-- [ ] `supabase-guardian.agent.md`.
-- [ ] `business-rules-test-engineer.agent.md`.
-- [ ] `frontend-ux-accessibility.agent.md`.
+- [x] `supabase-guardian.agent.md`.
+- [x] `business-rules-test-engineer.agent.md`.
+- [x] `frontend-ux-accessibility.agent.md`.
+- [x] App + Supabase Pack.
 - [ ] Piloto controlado en `costa-clean-app`.
 
 ## Fase 5 — Webs visuales y producción
 
-**Estado:** Pendiente
+**Estado:** Implementación completa; piloto pendiente
 
-- [ ] `performance-gsap-motion.agent.md`.
-- [ ] `seo-local-structured-data.agent.md`.
-- [ ] `release-deployment-guardian.agent.md`.
+- [x] `performance-gsap-motion.agent.md`.
+- [x] `seo-local-structured-data.agent.md`.
+- [x] `release-deployment-guardian.agent.md`.
+- [x] GSAP Web Pack.
 - [ ] Piloto controlado en una web GSAP.
 
 ## Fase 6 — Arquitectura de agentes empresariales
 
-**Estado:** Pendiente
+**Estado:** Completa
 
-- [ ] `enterprise-agent-architect.agent.md`.
-- [ ] Plantilla de trigger, herramientas, permisos y aprobaciones.
-- [ ] Diseñar primer flujo Costa Clean: lead → presupuesto borrador → aprobación → email.
-- [ ] Mantener el agente empresarial fuera de GitHub Agents y versionar aquí únicamente su código, reglas y pruebas.
+- [x] `enterprise-agent-architect.agent.md`.
+- [x] Plantilla de trigger, tools, permisos y aprobaciones.
+- [x] Flujo Costa Clean: lead → cálculo → presupuesto borrador → aprobación → email.
+- [x] Separación explícita entre GitHub Agents y runtime empresarial.
 
 ## Fase 7 — Packs reutilizables
 
-**Estado:** Pendiente
+**Estado:** Completa
 
-- [ ] Universal Pack.
-- [ ] App + Supabase Pack.
-- [ ] GSAP Web Pack.
-- [ ] Enterprise Agent Pack.
-- [ ] Guía de instalación por proyecto.
+- [x] Universal Pack.
+- [x] App + Supabase Pack.
+- [x] GSAP Web Pack.
+- [x] Enterprise Agent Pack.
+- [x] Guía de instalación.
+- [x] Plantilla de onboarding.
 
 ## Fase 8 — Distribución y versión estable
 
-**Estado:** Pendiente
+**Estado:** En cierre
 
-- [ ] Evaluar repositorio de organización `.github` o `.github-private`.
-- [ ] Preparar changelog y etiquetado semántico.
-- [ ] Validar agentes en proyectos reales.
-- [ ] Publicar `v1.0.0`.
+- [x] Evaluar distribución actual y futura mediante `.github`/`.github-private`.
+- [x] Preparar changelog y SemVer.
+- [x] Preparar release candidate `v1.0.0-rc.1`.
+- [ ] CI del PR en verde.
+- [ ] Auditoría independiente sin P0/P1/P2.
+- [ ] Fusionar PR de fundación.
+- [ ] Ejecutar pilotos reales.
+- [ ] Publicar `v1.0.0` estable.
 
-## Próximo bloque recomendado
+## Gates restantes
 
-1. Crear guía de autoría y catálogo de agentes.
-2. Añadir validador automático de frontmatter y Markdown.
-3. Crear escenarios de evaluación para el núcleo universal.
-4. Revisar y fusionar el PR de fundación.
-5. Probar los cuatro agentes en un repositorio piloto sin acceso a producción.
-6. Iniciar la Fase 3 con auditores independientes.
+1. Ejecutar GitHub Actions del PR.
+2. Revisar el diff completo con `pr-quality-gate` y `security-privacy-auditor` en modo lectura.
+3. Corregir cualquier P0/P1/P2 real.
+4. Fusionar el PR.
+5. Confirmar que los perfiles aparecen en GitHub Copilot Agents.
+6. Instalar App + Supabase Pack en `costa-clean-app` mediante PR.
+7. Instalar GSAP Web Pack en una web piloto mediante PR.
+8. Ejecutar escenarios pequeños y registrar resultados.
+9. Promover el changelog y crear tag `v1.0.0`.
 
 ## Definición de terminado
 
-Una fase solo puede marcarse como cerrada cuando:
+La versión estable se considera cerrada cuando:
 
-- los archivos existen en la rama predeterminada;
-- la sintaxis y enlaces fueron validados;
-- los escenarios de evaluación están documentados;
-- no quedan hallazgos P0 o P1;
-- cualquier deuda P2/P3 está registrada;
-- el pull request fue revisado y fusionado.
+- los archivos existen en `main`;
+- CI está verde;
+- no quedan hallazgos P0, P1 o P2;
+- los perfiles aparecen y se pueden seleccionar;
+- los dos pilotos controlados están documentados;
+- cualquier deuda P3 está registrada;
+- se publica el tag `v1.0.0`.
