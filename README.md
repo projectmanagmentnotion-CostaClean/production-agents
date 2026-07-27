@@ -1,127 +1,164 @@
 # Production Agents Library
 
-Biblioteca central de agentes reutilizables para planificación, desarrollo, auditoría, seguridad, UX/UI, releases y cierre de producción.
+Biblioteca profesional y reutilizable de GitHub Custom Agents para planificar, construir, probar, auditar y preparar releases de webs, aplicaciones, Supabase, GSAP y agentes empresariales.
 
-El repositorio combina dos capas:
+## No necesitas Codex
 
-1. **GitHub Custom Agents ejecutables** en `.github/agents/`.
-2. **Playbooks, agentes históricos y plantillas portables** en `agents/`, `playbooks/` y `templates/`.
-
-Sirve como fuente común para proyectos como:
-
-- Costa Clean App y CRM;
-- Ridaos Print;
-- webs corporativas y landings;
-- ecommerce y configuradores;
-- apps internas;
-- proyectos con React, Vite, Next.js, WordPress, GSAP o Supabase;
-- futuras automatizaciones y agentes empresariales.
-
-## Uso sin Codex
-
-Codex no es obligatorio. El flujo principal puede realizarse con:
+El flujo principal funciona con:
 
 ```text
 ChatGPT
-Diseño, creación y revisión de agentes
+→ diseña, crea y revisa los perfiles
 
 GitHub
-Repositorio, ramas, commits y pull requests
+→ almacena, versiona, valida y distribuye
 
 GitHub Copilot Custom Agents
-Ejecución de perfiles especializados
+→ ejecuta los especialistas sobre repositorios
 
 GitHub Actions
-Validaciones automáticas
+→ valida contratos y estructura
 ```
 
-Codex queda como herramienta opcional para trabajo local o ingeniería intensiva.
+Codex queda como herramienta opcional, no como dependencia del proyecto.
 
-## Uso de GitHub Custom Agents
-
-1. Fusiona los perfiles de `.github/agents/` en la rama predeterminada.
-2. Abre la sección GitHub Copilot Agents.
-3. Selecciona este repositorio y el agente deseado.
-4. Describe una tarea concreta y sus límites.
-5. Revisa la rama, el pull request y las validaciones antes de fusionar.
-
-Los agentes con capacidad de edición o ejecución están configurados inicialmente para selección manual mediante `disable-model-invocation: true`.
-
-## Núcleo universal disponible
-
-- `.github/agents/project-continuation.agent.md`: reconstruye el estado real y continúa el siguiente bloque desbloqueado.
-- `.github/agents/implementation-planner.agent.md`: diseña un plan ejecutable sin modificar código.
-- `.github/agents/senior-fullstack-builder.agent.md`: implementa funcionalidades aprobadas de extremo a extremo.
-- `.github/agents/bug-root-cause-investigator.agent.md`: reproduce errores, confirma causa raíz y añade pruebas de regresión.
-
-Consulta `docs/ROADMAP.md` para especialistas de QA, seguridad, Supabase, UX, GSAP, SEO, despliegue y agentes empresariales.
-
-## Qué agente seleccionar
+## Estructura
 
 ```text
-Necesito entender y planificar una funcionalidad
-→ implementation-planner
-
-Tengo un plan aprobado y quiero implementarlo
-→ senior-fullstack-builder
-
-Tengo un error concreto o una regresión
-→ bug-root-cause-investigator
-
-Quiero retomar un proyecto y continuar su roadmap
-→ project-continuation
+.github/agents/       15 agentes ejecutables
+.github/workflows/    validación automática
+agents/               agentes históricos portables
+packs/                selecciones por tipo de proyecto
+playbooks/            procesos y casos reales
+templates/            plantillas de creación y onboarding
+docs/                 gobierno, seguridad y operación
+tests/                escenarios contractuales
+scripts/              validadores locales
 ```
 
-## Seguridad y permisos
+## Agentes disponibles
 
-Antes de utilizar o ampliar los agentes, lee:
+### Núcleo universal
+
+- `project-continuation`
+- `implementation-planner`
+- `senior-fullstack-builder`
+- `bug-root-cause-investigator`
+
+### Calidad independiente
+
+- `qa-e2e-specialist`
+- `pr-quality-gate`
+- `security-privacy-auditor`
+- `documentation-roadmap`
+
+### Apps y Supabase
+
+- `supabase-guardian`
+- `business-rules-test-engineer`
+- `frontend-ux-accessibility`
+
+### Webs visuales y producción
+
+- `performance-gsap-motion`
+- `seo-local-structured-data`
+- `release-deployment-guardian`
+
+### Agentes empresariales
+
+- `enterprise-agent-architect`
+
+Consulta la descripción, riesgo y uso de cada uno en `docs/AGENT_CATALOG.md`.
+
+## Packs
+
+- `packs/universal`
+- `packs/app-supabase`
+- `packs/web-gsap`
+- `packs/enterprise-agents`
+
+La guía completa está en `docs/INSTALLATION.md`.
+
+## Uso
+
+1. Elige un pack.
+2. Copia solo los perfiles necesarios a `.github/agents/` del proyecto.
+3. Crea un `AGENTS.md` específico usando `templates/project-onboarding.md`.
+4. Fusiona los perfiles en la rama predeterminada.
+5. Abre GitHub Copilot Agents y selecciona manualmente el agente.
+6. Ejecuta una tarea pequeña en rama aislada.
+7. Revisa diff, CI y evidencia con un agente independiente.
+
+Todos los perfiles se mantienen inicialmente con `disable-model-invocation: true`.
+
+## Selección rápida
+
+```text
+Planificar                 → implementation-planner
+Implementar                → senior-fullstack-builder
+Corregir un error          → bug-root-cause-investigator
+Continuar un roadmap       → project-continuation
+Probar                     → qa-e2e-specialist
+Auditar un PR              → pr-quality-gate
+Auditar seguridad          → security-privacy-auditor
+Alinear documentación      → documentation-roadmap
+Supabase                   → supabase-guardian
+Tarifas y facturación      → business-rules-test-engineer
+UX y accesibilidad         → frontend-ux-accessibility
+GSAP y rendimiento         → performance-gsap-motion
+SEO local                  → seo-local-structured-data
+Preparar una publicación   → release-deployment-guardian
+Diseñar un agente real     → enterprise-agent-architect
+```
+
+## Validación
+
+Ejecuta localmente:
+
+```bash
+ruby scripts/validate_agents.rb
+```
+
+GitHub Actions ejecuta el mismo gate en pull requests y en `main`. El validador comprueba frontmatter, nombres, herramientas, riesgos, versiones, secciones obligatorias y límite del prompt.
+
+## Seguridad
+
+Lee antes de utilizar o ampliar perfiles:
 
 - `AGENTS.md`
 - `docs/SECURITY_MODEL.md`
 - `docs/PERMISSION_MATRIX.md`
+- `docs/AGENT_AUTHORING_GUIDE.md`
+- `docs/TESTING_STRATEGY.md`
+
+Reglas permanentes:
+
+- herramientas explícitas y mínimo privilegio;
+- ningún agente escribe directamente en `main`;
+- producción, secretos, pagos y acciones irreversibles quedan prohibidos por defecto;
+- Supabase remoto requiere un gate separado;
+- la IA no calcula dinero libremente;
+- el implementador no aprueba su propio trabajo;
+- `NOT_EXECUTED` nunca equivale a `PASS`.
+
+## Agentes empresariales reales
+
+GitHub Agents ayuda a diseñar y mantener el software, pero el agente que envía emails, calcula presupuestos o gestiona reservas debe ejecutarse en un backend o worker con tools limitadas, permisos, aprobaciones y auditoría.
+
+Primer caso diseñado: `playbooks/costa-clean-lead-agent.md`.
+
+## Documentación
+
 - `docs/ROADMAP.md`
-
-Los agentes del núcleo están limitados a lectura o a cambios locales reversibles en rama. Producción, migraciones remotas, secretos, pagos, facturación y acciones destructivas quedan fuera de alcance por defecto.
-
-## Agentes históricos y portables
-
-- `agents/universal-product-corrector.md`
-- `agents/ux-ui-auditor.md`
-- `agents/production-release-gate.md`
-- `agents/supabase-security-gate.md`
-- `agents/migration-history-gate.md`
-- `agents/final-closeout-agent.md`
-
-Estos archivos se conservarán y se convertirán progresivamente a perfiles `.agent.md` después de revisar herramientas, permisos y compatibilidad.
-
-## Plantillas
-
-- `templates/custom-agent-template.agent.md`
-- `templates/bug-report.md`
-- `templates/ux-ui-audit.md`
-- `templates/release-plan.md`
-- `templates/production-smoke.md`
-- `templates/rollback-plan.md`
-
-## Playbooks
-
-- `playbooks/costa-clean-closeout.md`
-- `playbooks/ridaos-web-audit.md`
-- `playbooks/generic-web-production-audit.md`
-
-## Reglas permanentes
-
-- No tocar producción sin gate explícito.
-- No tocar bases de datos productivas sin backup y autorización.
-- No ejecutar `db push` si existe drift o bloqueo.
-- No tocar facturas, cobros, cierres, numeración fiscal o pagos sin gate fiscal explícito.
-- No usar `service_role` en frontend.
-- No imprimir ni versionar secretos.
-- No commitear `.env`, cookies, dumps, `storageState`, tokens o carpetas privadas.
-- No declarar pruebas o auditorías como ejecutadas sin evidencia.
-- Todo cambio debe realizarse en rama y quedar revisable mediante pull request.
-- El agente que implementa no aprueba ni fusiona su propio trabajo.
+- `docs/AGENT_CATALOG.md`
+- `docs/AGENT_AUTHORING_GUIDE.md`
+- `docs/INSTALLATION.md`
+- `docs/SECURITY_MODEL.md`
+- `docs/PERMISSION_MATRIX.md`
+- `docs/TESTING_STRATEGY.md`
+- `docs/VERSIONING.md`
+- `CHANGELOG.md`
 
 ## Estado
 
-La biblioteca está en fase de fundación `v0.1`. El núcleo universal ya está implementado en el PR de fundación, pero todavía requiere validación, revisión, merge y prueba piloto antes de considerarse estable.
+Implementación de la biblioteca `v1.0.0-rc.1` completa. La promoción a estable requiere CI verde, revisión independiente, merge y comprobación post-merge de aparición/ejecución en GitHub Copilot Agents.
