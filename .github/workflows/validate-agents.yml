@@ -1,0 +1,74 @@
+name: Validate Custom Agents
+
+on:
+  pull_request:
+    paths:
+      - ".github/agents/**"
+      - "scripts/validate_agents.rb"
+      - "docs/**"
+      - "packs/**"
+      - "tests/**"
+      - "AGENTS.md"
+      - "README.md"
+      - "CHANGELOG.md"
+  push:
+    branches: [main]
+    paths:
+      - ".github/agents/**"
+      - "scripts/validate_agents.rb"
+      - "docs/**"
+      - "packs/**"
+      - "tests/**"
+      - "AGENTS.md"
+      - "README.md"
+      - "CHANGELOG.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-agents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Validate agent profiles
+        run: ruby scripts/validate_agents.rb
+
+      - name: Check required project files
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            AGENTS.md
+            README.md
+            CHANGELOG.md
+            docs/AGENT_AUTHORING_GUIDE.md
+            docs/AGENT_CATALOG.md
+            docs/PERMISSION_MATRIX.md
+            docs/ROADMAP.md
+            docs/SECURITY_MODEL.md
+            docs/TESTING_STRATEGY.md
+            docs/VERSIONING.md
+          )
+          for file in "${required[@]}"; do
+            test -s "$file" || { echo "Missing or empty: $file"; exit 1; }
+          done
+
+      - name: Check Markdown conflict markers
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE '^(<<<<<<<|=======|>>>>>>>)' --include='*.md' .; then
+            echo "Merge conflict markers found"
+            exit 1
+          fi
