@@ -24,7 +24,8 @@
 |---|---:|---|
 | `supabase-guardian` | R3 | Preparar cambios seguros de esquema, RLS, Auth y Storage. |
 | `business-rules-test-engineer` | R2 | Convertir reglas económicas en código determinista y tests. |
-| `frontend-ux-accessibility` | R2 | Mejorar UX, responsive y accesibilidad. |
+| `frontend-ux-accessibility` | R2 | Mejorar UX, responsive y accesibilidad en una superficie o flujo acotado. |
+| `senior-figma-mobile-first-auditor` | R2 | Auditar el frontend completo con criterio Figma senior, diseñar primero móvil, adaptar iPad y elevar limpieza, claridad y consistencia sin tocar lógica. |
 
 ## Webs visuales y producción
 
@@ -53,7 +54,8 @@ Auditar seguridad → security-privacy-auditor
 Alinear docs → documentation-roadmap
 Supabase → supabase-guardian
 Tarifas/facturas → business-rules-test-engineer
-UX/accesibilidad → frontend-ux-accessibility
+Corregir UX/accesibilidad acotada → frontend-ux-accessibility
+Auditar frontend completo mobile-first → senior-figma-mobile-first-auditor
 GSAP/rendimiento → performance-gsap-motion
 SEO local → seo-local-structured-data
 Preparar publicación → release-deployment-guardian
