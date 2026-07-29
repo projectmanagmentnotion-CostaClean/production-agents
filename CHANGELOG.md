@@ -4,6 +4,11 @@ Todos los cambios relevantes de Production Agents Library se documentan aquí.
 
 ## [Unreleased]
 
+### Añadido
+
+- Nuevo agente `senior-figma-mobile-first-auditor` para auditar el 100 % del frontend descubierto, diseñar primero móvil, adaptar iPad y elevar la interfaz a un estándar limpio, profesional, moderno, minimalista, intuitivo y guiado sin alterar lógica de negocio.
+- Playbook reutilizable para auditorías integrales de frontend mobile-first con cobertura por rutas, estados y viewports.
+
 ### Pendiente
 
 - Ejecución interactiva de escenarios en GitHub Copilot Agents.
