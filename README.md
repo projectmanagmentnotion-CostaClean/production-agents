@@ -25,7 +25,7 @@ Codex queda como herramienta opcional, no como dependencia del proyecto.
 ## Estructura
 
 ```text
-.github/agents/       15 agentes ejecutables
+.github/agents/       16 agentes ejecutables
 .github/workflows/    validación automática
 agents/               agentes históricos portables
 packs/                selecciones por tipo de proyecto
@@ -57,6 +57,7 @@ scripts/              validadores locales
 - `supabase-guardian`
 - `business-rules-test-engineer`
 - `frontend-ux-accessibility`
+- `senior-figma-mobile-first-auditor`
 
 ### Webs visuales y producción
 
@@ -94,21 +95,22 @@ Todos los perfiles se mantienen inicialmente con `disable-model-invocation: true
 ## Selección rápida
 
 ```text
-Planificar                 → implementation-planner
-Implementar                → senior-fullstack-builder
-Corregir un error          → bug-root-cause-investigator
-Continuar un roadmap       → project-continuation
-Probar                     → qa-e2e-specialist
-Auditar un PR              → pr-quality-gate
-Auditar seguridad          → security-privacy-auditor
-Alinear documentación      → documentation-roadmap
-Supabase                   → supabase-guardian
-Tarifas y facturación      → business-rules-test-engineer
-UX y accesibilidad         → frontend-ux-accessibility
-GSAP y rendimiento         → performance-gsap-motion
-SEO local                  → seo-local-structured-data
-Preparar una publicación   → release-deployment-guardian
-Diseñar un agente real     → enterprise-agent-architect
+Planificar                    → implementation-planner
+Implementar                   → senior-fullstack-builder
+Corregir un error             → bug-root-cause-investigator
+Continuar un roadmap          → project-continuation
+Probar                        → qa-e2e-specialist
+Auditar un PR                 → pr-quality-gate
+Auditar seguridad             → security-privacy-auditor
+Alinear documentación         → documentation-roadmap
+Supabase                      → supabase-guardian
+Tarifas y facturación         → business-rules-test-engineer
+UX y accesibilidad            → frontend-ux-accessibility
+Auditoría Figma mobile-first  → senior-figma-mobile-first-auditor
+GSAP y rendimiento            → performance-gsap-motion
+SEO local                     → seo-local-structured-data
+Preparar una publicación      → release-deployment-guardian
+Diseñar un agente real        → enterprise-agent-architect
 ```
 
 ## Validación
